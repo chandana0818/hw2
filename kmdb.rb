@@ -23,9 +23,119 @@
 # - Generate the models and migration files to match the domain model from hw1.
 #   Execute the migration files to create the tables in the database. Add the
 #   relevant association methods in each model. (5 points)
+Movie.destroy_all
+Person.destroy_all
+Role.destroy_all
+
+# rails generate model Movie
+# rails generate model Person
+# rails generate model Role
+
+#rails db:migrate
+
 # - Insert the "Batman" sample data using ruby code. Do not use hard-coded ids and
 #   delete any existing data beforehand so that each run of this script does not
 #   create duplicate data. (5 points)
+attributes = {
+  title: "Batman Begins",
+  year_released: 2005,
+  rated: "PG-13",
+  person_id: 1
+}
+batman1 = Movie.new(attributes)
+batman1.save
+
+attributes2 = {
+  title: "The Dark Knight",
+  year_released: 2008,
+  rated: "PG-13",
+  person_id: 1
+}
+batman2 = Movie.new(attributes2)
+batman2.save
+
+attributes3 = {
+  title: "The Dark Knight Rises",
+  year_released: 2012,
+  rated: "PG-13",
+  person_id: 1
+}
+batman3 = Movie.new(attributes3)
+batman3.save
+
+attributes = {
+  name: "Christopher Nolan"
+}
+person1 = Person.new(attributes)
+person1.save
+
+attributes = {
+  name: "Christian Bale"
+}
+person1 = Person.new(attributes)
+person1.save
+
+attributes = {
+  name: "Michael Caine"
+}
+person1 = Person.new(attributes)
+person1.save
+
+attributes = {
+  name: "Liam Neeson"
+}
+person1 = Person.new(attributes)
+person1.save
+
+attributes = {
+  name: "Katie Holmes"
+}
+person1 = Person.new(attributes)
+person1.save
+
+attributes = {
+  name: "Gary Oldman"
+}
+person1 = Person.new(attributes)
+person1.save
+
+attributes = {
+  name: "Heath Ledger"
+}
+person1 = Person.new(attributes)
+person1.save
+
+attributes = {
+  name: "Aaron Eckhart"
+}
+person1 = Person.new(attributes)
+person1.save
+
+attributes = {
+  name: "Maggie Gyllenhaal"
+}
+person1 = Person.new(attributes)
+person1.save
+
+
+attributes = {
+  name: "Tom Hardy"
+}
+person1 = Person.new(attributes)
+person1.save
+
+attributes = {
+  name: "Joseph Gordon-Levitt"
+}
+person1 = Person.new(attributes)
+person1.save
+
+attributes = {
+  name: "Anne Hathaway"
+}
+person1 = Person.new(attributes)
+person1.save
+
 # - Query the data and loop through it to display output similar to the following
 #   sample "report". (10 points)
 
