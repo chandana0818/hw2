@@ -136,6 +136,128 @@ attributes = {
 person1 = Person.new(attributes)
 person1.save
 
+attributes = {
+    movie_id: 1,
+    person_id: 2,
+    character_name: "Bruce Wayne"
+}
+role1 = Role.new(attributes)
+role1.save
+
+attributes = {
+    movie_id: 1,
+    person_id: 3,
+    character_name: "Alfred"
+}
+role1 = Role.new(attributes)
+role1.save
+
+attributes = {
+    movie_id: 1,
+    person_id: 4,
+    character_name: "Ra's Al Ghul"
+}
+role1 = Role.new(attributes)
+role1.save
+
+attributes = {
+    movie_id: 1,
+    person_id: 5,
+    character_name: "Rachel Dawes"
+}
+role1 = Role.new(attributes)
+role1.save
+
+attributes = {
+    movie_id: 1,
+    person_id: 6,
+    character_name: "Commissioner Gordon"
+}
+role1 = Role.new(attributes)
+role1.save
+
+attributes = {
+    movie_id: 2,
+    person_id: 2,
+    character_name: "Bruce Wayne"
+}
+role1 = Role.new(attributes)
+role1.save
+
+attributes = {
+    movie_id: 2,
+    person_id: 3,
+    character_name: "Alfred"
+}
+role1 = Role.new(attributes)
+role1.save
+
+
+attributes = {
+    movie_id: 2,
+    person_id: 9,
+    character_name: "Rachel Dawes"
+}
+role1 = Role.new(attributes)
+role1.save
+
+attributes = {
+    movie_id: 2,
+    person_id: 7,
+    character_name: "Joker"
+}
+role1 = Role.new(attributes)
+role1.save
+
+attributes = {
+    movie_id: 2,
+    person_id: 8,
+    character_name: "Harvey Dent"
+}
+role1 = Role.new(attributes)
+role1.save
+
+attributes = {
+    movie_id: 3,
+    person_id: 2,
+    character_name: "Bruce Wayne"
+}
+role1 = Role.new(attributes)
+role1.save
+
+attributes = {
+    movie_id: 3,
+    person_id: 6,
+    character_name: "Commissioner Gordon"
+}
+role1 = Role.new(attributes)
+role1.save
+
+attributes = {
+    movie_id: 3,
+    person_id: 10,
+    character_name: "Bane"
+}
+role1 = Role.new(attributes)
+role1.save
+
+attributes = {
+    movie_id: 3,
+    person_id: 11,
+    character_name: "John Blake"
+}
+role1 = Role.new(attributes)
+role1.save
+
+attributes = {
+    movie_id: 3,
+    person_id: 12,
+    character_name: "Selina Kyle"
+}
+role1 = Role.new(attributes)
+role1.save
+
+
 # - Query the data and loop through it to display output similar to the following
 #   sample "report". (10 points)
 
