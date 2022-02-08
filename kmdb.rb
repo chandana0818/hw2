@@ -36,32 +36,7 @@ Role.destroy_all
 # - Insert the "Batman" sample data using ruby code. Do not use hard-coded ids and
 #   delete any existing data beforehand so that each run of this script does not
 #   create duplicate data. (5 points)
-attributes = {
-  title: "Batman Begins",
-  year_released: 2005,
-  rated: "PG-13",
-  person_id: 1
-}
-batman1 = Movie.new(attributes)
-batman1.save
 
-attributes2 = {
-  title: "The Dark Knight",
-  year_released: 2008,
-  rated: "PG-13",
-  person_id: 1
-}
-batman2 = Movie.new(attributes2)
-batman2.save
-
-attributes3 = {
-  title: "The Dark Knight Rises",
-  year_released: 2012,
-  rated: "PG-13",
-  person_id: 1
-}
-batman3 = Movie.new(attributes3)
-batman3.save
 
 attributes = {
   name: "Christopher Nolan"
@@ -136,8 +111,39 @@ attributes = {
 person1 = Person.new(attributes)
 person1.save
 
+person = Person.where({ name: "Christopher Nolan"})[0]
 attributes = {
-    movie_id: 1,
+  title: "Batman Begins",
+  year_released: 2005,
+  rated: "PG-13",
+  person_id: person.id
+}
+batman1 = Movie.new(attributes)
+batman1.save
+
+attributes2 = {
+  title: "The Dark Knight",
+  year_released: 2008,
+  rated: "PG-13",
+  person_id: person.id
+}
+batman2 = Movie.new(attributes2)
+batman2.save
+
+attributes3 = {
+  title: "The Dark Knight Rises",
+  year_released: 2012,
+  rated: "PG-13",
+  person_id: person.id
+}
+batman3 = Movie.new(attributes3)
+batman3.save
+
+
+
+#person = Person.where({ name: "Christopher Nolan"})[0]
+attributes = {
+    movie_id: Movie.where({ title: "Batman Begins"})[0].id,
     person_id: 2,
     character_name: "Bruce Wayne"
 }
@@ -145,7 +151,7 @@ role1 = Role.new(attributes)
 role1.save
 
 attributes = {
-    movie_id: 1,
+    movie_id: Movie.where({ title: "Batman Begins"})[0].id,
     person_id: 3,
     character_name: "Alfred"
 }
@@ -153,7 +159,7 @@ role1 = Role.new(attributes)
 role1.save
 
 attributes = {
-    movie_id: 1,
+    movie_id: Movie.where({ title: "Batman Begins"})[0].id,
     person_id: 4,
     character_name: "Ra's Al Ghul"
 }
@@ -161,7 +167,7 @@ role1 = Role.new(attributes)
 role1.save
 
 attributes = {
-    movie_id: 1,
+    movie_id: Movie.where({ title: "Batman Begins"})[0].id,
     person_id: 5,
     character_name: "Rachel Dawes"
 }
@@ -169,7 +175,7 @@ role1 = Role.new(attributes)
 role1.save
 
 attributes = {
-    movie_id: 1,
+    movie_id: Movie.where({ title: "Batman Begins"})[0].id,
     person_id: 6,
     character_name: "Commissioner Gordon"
 }
@@ -177,7 +183,7 @@ role1 = Role.new(attributes)
 role1.save
 
 attributes = {
-    movie_id: 2,
+    movie_id: Movie.where({ title: "The Dark Knight"})[0].id,
     person_id: 2,
     character_name: "Bruce Wayne"
 }
@@ -185,7 +191,7 @@ role1 = Role.new(attributes)
 role1.save
 
 attributes = {
-    movie_id: 2,
+    movie_id: Movie.where({ title: "The Dark Knight"})[0].id,
     person_id: 3,
     character_name: "Alfred"
 }
@@ -194,7 +200,7 @@ role1.save
 
 
 attributes = {
-    movie_id: 2,
+    movie_id: Movie.where({ title: "The Dark Knight"})[0].id,
     person_id: 9,
     character_name: "Rachel Dawes"
 }
@@ -202,7 +208,7 @@ role1 = Role.new(attributes)
 role1.save
 
 attributes = {
-    movie_id: 2,
+    movie_id: Movie.where({ title: "The Dark Knight"})[0].id,
     person_id: 7,
     character_name: "Joker"
 }
@@ -210,7 +216,7 @@ role1 = Role.new(attributes)
 role1.save
 
 attributes = {
-    movie_id: 2,
+    movie_id: Movie.where({ title: "The Dark Knight"})[0].id,
     person_id: 8,
     character_name: "Harvey Dent"
 }
@@ -218,7 +224,7 @@ role1 = Role.new(attributes)
 role1.save
 
 attributes = {
-    movie_id: 3,
+    movie_id: Movie.where({ title: "The Dark Knight Rises"})[0].id,
     person_id: 2,
     character_name: "Bruce Wayne"
 }
@@ -226,7 +232,7 @@ role1 = Role.new(attributes)
 role1.save
 
 attributes = {
-    movie_id: 3,
+    movie_id: Movie.where({ title: "The Dark Knight Rises"})[0].id,
     person_id: 6,
     character_name: "Commissioner Gordon"
 }
@@ -234,7 +240,7 @@ role1 = Role.new(attributes)
 role1.save
 
 attributes = {
-    movie_id: 3,
+    movie_id: Movie.where({ title: "The Dark Knight Rises"})[0].id,
     person_id: 10,
     character_name: "Bane"
 }
@@ -242,7 +248,7 @@ role1 = Role.new(attributes)
 role1.save
 
 attributes = {
-    movie_id: 3,
+    movie_id: Movie.where({ title: "The Dark Knight Rises"})[0].id,
     person_id: 11,
     character_name: "John Blake"
 }
@@ -250,14 +256,18 @@ role1 = Role.new(attributes)
 role1.save
 
 attributes = {
-    movie_id: 3,
+    movie_id: Movie.where({ title: "The Dark Knight Rises"})[0].id,
     person_id: 12,
     character_name: "Selina Kyle"
 }
 role1 = Role.new(attributes)
 role1.save
 
+p Movie.all.count
+p Person.all.count
+p Role.all.count
 
+p Movie.all
 # - Query the data and loop through it to display output similar to the following
 #   sample "report". (10 points)
 
@@ -314,6 +324,28 @@ puts "Movies"
 puts "======"
 puts ""
 
+movies = Movie.all
+
+for movie in movies
+    person = movie.person
+    puts "#{movie.title} - #{movie.year_released} - #{movie.rated} - #{person.name}"
+end
+
+roles = Role.all
+
+for role in roles
+  movie = Movie.where({ id: role.movie_id})[0].id
+  person = Person.where({id: role.person_id})[0].id
+  puts "#{movie.title} - #{person.name}  - #{role.character_name}"
+end
+
+# puts "Contacts: #{Contact.all.count}"
+# contacts = Contact.all
+# for contact in contacts
+#     # company = Company.where(id: contact.company_id)[0]
+#     company = contact.company
+#     puts "#{contact.first_name} #{contact.last_name} - #{contact.email} - #{company.name}"
+# end
 # Query the movies data and loop through the results to display the movies output
 # TODO!
 
